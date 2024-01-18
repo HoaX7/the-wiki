@@ -1,9 +1,7 @@
 import React from 'react'
+import { IMenuIconProps } from './IMenuicon.props'
 
-interface IProps {
-    toggle: () => void;
-}
-export default function MenuIcon({ toggle }: IProps) {
+export default function MenuIcon({ toggle }: IMenuIconProps) {
   return (
         <button onClick={toggle} className="block md:hidden">
           <svg

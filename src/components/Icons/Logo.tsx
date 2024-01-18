@@ -1,12 +1,9 @@
 import React from 'react'
 import logo from './logo.svg';
 import clsx from "clsx";
+import { ILogoProps } from './ILogo.props';
 
-interface Props {
-    size?: "large"
-    className?: string
-}
-export default function Logo({ size, className }: Props) {
+export default function Logo({ size, className }: ILogoProps) {
   return (
     <div className={clsx('flex items-center', className)}>
         <img src={logo} className="App-logo" alt="logo" width={size === "large" ? 120 : 50} />

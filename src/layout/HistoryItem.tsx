@@ -1,12 +1,9 @@
 import clsx from "clsx";
 import React from "react";
+import { IHistoryItemProps } from "./IHistoryitem.props";
 
-interface Props {
-  search: string;
-  text: string;
-  toggleSearch: (text: string) => void;
-}
-export default function HistoryItem({ text, search, toggleSearch }: Props) {
+
+export default function HistoryItem({ text, search, toggleSearch }: IHistoryItemProps) {
   return (
     <li
       className={clsx(

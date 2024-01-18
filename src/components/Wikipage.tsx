@@ -1,12 +1,9 @@
 import React from "react";
 import Logo from "./Icons/Logo";
 import Searchbar from "./Searchbar";
-import { searchWiki } from "../api";
+import { IWikipageProps } from "./IWikipage.props";
 
-interface Props {
-    onSearch: (text: string) => void;
-}
-export default function Wikipage({ onSearch }: Props) {
+export default function Wikipage({ onSearch }: IWikipageProps) {
   return (
     <div className="flex items-center justify-center w-full">
       <div className="w-full">

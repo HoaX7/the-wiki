@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import SearchIcon from "./Icons/SearchIcon";
+import { ISearchbarProps } from "./ISearchbar.props";
 
-interface Props {
-  className?: string;
-  onSubmit: (search: string) => void;
-}
-export default function Searchbar({ className, onSubmit }: Props) {
+export default function Searchbar({ className, onSubmit }: ISearchbarProps) {
   const [search, setSearch] = useState("");
 
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
