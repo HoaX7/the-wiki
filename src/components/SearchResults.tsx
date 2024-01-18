@@ -1,26 +1,32 @@
 import React from "react";
-import { WikiResultProps } from "../types";
 import Pagination from "./Paginate";
+import Searchbar from "./Searchbar";
+import { ISearchResultProps } from "./ISearchResults.props";
 
-interface Props {
-  result: WikiResultProps["query"]["search"];
-  metadata: WikiResultProps["query"]["searchinfo"];
-  searchQuery: string;
-  setPage: (page: number) => void;
-  currentPage: number;
-  toggleSideBar: () => void;
-}
 export default function SearchResults({
   result,
   metadata,
   searchQuery,
   setPage,
   currentPage,
-  toggleSideBar
-}: Props) {
+  toggleSideBar,
+  showSearch,
+  setShowSearch,
+  onSearch,
+}: ISearchResultProps) {
   const wikiUrl = "https://en.wikipedia.org/wiki?curid=";
   return (
     <div className="w-full overflow-auto">
+      {showSearch && (
+        <div className="absolute rounded -translate-x-[50%] left-[50%] z-20 shadow-lg top-40 w-[300px] md:w-[400px]">
+          <Searchbar
+            onSubmit={(text) => {
+              onSearch(text);
+              setShowSearch(false);
+            }}
+          />
+        </div>
+      )}
       <div className="sticky top-0 bg-white z-10 p-3 shadow flex items-center gap-4">
         <button onClick={toggleSideBar} className="block md:hidden">
           <svg

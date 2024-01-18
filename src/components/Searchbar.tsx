@@ -1,6 +1,5 @@
-import clsx from "clsx";
 import React, { useState } from "react";
-import SearchIcon from "./SearchIcon";
+import SearchIcon from "./Icons/SearchIcon";
 
 interface Props {
   className?: string;

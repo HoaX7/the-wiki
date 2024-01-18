@@ -1,19 +1,10 @@
-import React, { useState } from 'react'
-import Logo from '../components/Logo'
-import SearchIcon from '../components/SearchIcon'
+import React from 'react'
+import Logo from '../components/Icons/Logo'
 import clsx from 'clsx'
-import Searchbar from '../components/Searchbar'
+import { ISidebarProps } from './ISidebar.props'
 
-interface Props {
-    history: string[]
-    search: string
-    toggleSearch: (text: string) => void
-    reset: () => void
-    toggleSideBar: boolean
-    setShowSearch: (bool: boolean) => void
-    showSearch: boolean
-}
-export default function Sidebar({ history, search, toggleSearch, reset, toggleSideBar, setShowSearch, showSearch }: Props) {
+
+export default function Sidebar({ history, search, toggleSearch, reset, toggleSideBar, setShowSearch, showSearch }: ISidebarProps) {
   return (
     <div className={clsx('sidebar h-full lg:w-[20%] md:w-[25%] close-sidebar', toggleSideBar ? "show-sidebar" : "")}>
         <div className='p-3'><Logo /></div>
@@ -35,7 +26,7 @@ export default function Sidebar({ history, search, toggleSearch, reset, toggleSi
                 <ul className='mt-3'>
                     {history.map((text) => {
                         return (
-                            <li className={clsx('px-5 py-1 cursor-pointer mt-1', search === text ? "bg-gray-200" : "")}
+                            <li className={clsx('px-5 py-1 cursor-pointer mt-1 hover:bg-gray-200', search === text ? "bg-gray-200" : "")}
                                 onClick={() => {
                                     toggleSearch(text)
                                 }}

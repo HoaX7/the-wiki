@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React from 'react';
 
 interface PaginationProps {
   currentPage: number
@@ -23,18 +23,14 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, setPage, totalCoun
     return pageNumbers;
   };
 
-  const handlePageClick = (page: number) => {
-    setPage(page);
-  };
-
   return (
     <div>
-    <button onClick={() => handlePageClick(1)} disabled={currentPage === 1}
+    <button onClick={() => setPage(1)} disabled={currentPage === 1}
       className='rounded-md p-1 bg-gray-200 disabled:opacity-50 mr-2'
     >
       &lt;&lt;
     </button>
-      <button onClick={() => handlePageClick(currentPage - 1)} disabled={currentPage === 1}
+      <button onClick={() => setPage(currentPage - 1)} disabled={currentPage === 1}
         className='p-1 rounded-md bg-gray-200 disabled:opacity-50'
       >
         Prev
@@ -43,7 +39,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, setPage, totalCoun
       {generatePageNumbers().map((pageNumber) => (
         <button
           key={pageNumber}
-          onClick={() => handlePageClick(pageNumber)}
+          onClick={() => setPage(pageNumber)}
           disabled={pageNumber === currentPage}
           className={clsx('p-3', pageNumber === currentPage ? "underline" : "")}
         >
@@ -51,11 +47,16 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, setPage, totalCoun
         </button>
       ))}
 
-      <button onClick={() => handlePageClick(currentPage + 1)} disabled={currentPage === totalPages}
+      <button onClick={() => setPage(currentPage + 1)} disabled={currentPage === totalPages}
         className='rounded-md p-1 bg-gray-200 disabled:opacity-50'
       >
         Next
       </button>
+    <button onClick={() => setPage(totalPages)} disabled={currentPage === totalPages}
+      className='rounded-md p-1 bg-gray-200 disabled:opacity-50 ml-2'
+    >
+      &gt;&gt;
+    </button>
     </div>
   );
 };
