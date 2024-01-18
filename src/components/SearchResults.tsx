@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 import Pagination from "./Paginate";
 import Searchbar from "./Searchbar";
-import { ISearchResultProps } from "./ISearchResults.props";
-import { WindowEvent } from "./Hooks/WindowEvent";
+import { ISearchResultProps } from "./props/ISearchResults.props";
+import { useWindowEvent } from "../hooks/WindowEvent";
 import ResultComponent from "./ResultComponent";
 import MenuIcon from "./Icons/MenuIcon";
 
@@ -21,7 +21,7 @@ export default function SearchResults({
     if (showSearch) setShowSearch(false);
   }, [showSearch]);
 
-  WindowEvent("mousedown", callback);
+  useWindowEvent("mousedown", callback);
 
   const search = (text: string) => {
     onSearch(text);

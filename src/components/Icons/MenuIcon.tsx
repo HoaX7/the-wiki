@@ -1,5 +1,5 @@
 import React from 'react'
-import { IMenuIconProps } from './IMenuicon.props'
+import { IMenuIconProps } from './props/IMenuicon.props'
 
 export default function MenuIcon({ toggle }: IMenuIconProps) {
   return (

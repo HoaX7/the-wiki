@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from './logo.svg';
 import clsx from "clsx";
-import { ILogoProps } from './ILogo.props';
+import { ILogoProps } from './props/ILogo.props';
 
 export default function Logo({ size, className }: ILogoProps) {
   return (

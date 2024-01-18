@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./Icons/Logo";
 import Searchbar from "./Searchbar";
-import { IWikipageProps } from "./IWikipage.props";
+import { IWikipageProps } from "./props/IWikipage.props";
 
 export default function Wikipage({ onSearch }: IWikipageProps) {
   return (

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
-import { IPaginationProps } from './IPaginate.props';
+import { IPaginationProps } from './props/IPaginate.props';
 
 const Pagination: React.FC<IPaginationProps> = ({ currentPage, setPage, totalCount, perPage }) => {
   const totalPages = Math.ceil(totalCount / perPage);

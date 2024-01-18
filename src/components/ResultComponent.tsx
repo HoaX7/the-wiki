@@ -1,5 +1,5 @@
 import React from "react";
-import { IResultComponentProps } from "./IResultComponent.props";
+import { IResultComponentProps } from "./props/IResultComponent.props";
 import sanitize from "sanitize-html";
 
 export default function ResultComponent({ data }: IResultComponentProps) {

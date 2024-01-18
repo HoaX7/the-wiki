@@ -1,4 +1,4 @@
-import { WikiResultProps } from "../types";
+import { WikiResultProps } from "../../types";
 
 export interface ISearchResultProps {
   result: WikiResultProps["query"]["search"];

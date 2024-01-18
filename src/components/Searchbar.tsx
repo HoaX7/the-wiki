@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchIcon from "./Icons/SearchIcon";
-import { ISearchbarProps } from "./ISearchbar.props";
+import { ISearchbarProps } from "./props/ISearchbar.props";
 
 export default function Searchbar({ className, onSubmit }: ISearchbarProps) {
   const [search, setSearch] = useState("");
