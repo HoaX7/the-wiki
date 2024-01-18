@@ -1,7 +1,7 @@
 import React from "react";
-import Logo from "../components/Icons/Logo";
+import Logo from "../Icons/Logo";
 import clsx from "clsx";
-import { ISidebarProps } from "./ISidebar.props";
+import { ISidebarProps } from "./props/ISidebar.props";
 import HistoryItem from "./HistoryItem";
 
 export default function Sidebar({

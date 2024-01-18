@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { WikiResultProps } from "../types";
 import { searchWiki } from "../api";
-import Sidebar from "../layout/Sidebar";
+import Sidebar from "./layout/Sidebar";
 import Wikipage from "./Wikipage";
 import SearchResults from "./SearchResults";
 

@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import Pagination from "./Paginate";
 import Searchbar from "./Searchbar";
 import { ISearchResultProps } from "./props/ISearchResults.props";
-import { useWindowEvent } from "../hooks/WindowEvent";
+import { useWindowEvent } from "../hooks/useWindowEvent";
 import ResultComponent from "./ResultComponent";
 import MenuIcon from "./Icons/MenuIcon";
 

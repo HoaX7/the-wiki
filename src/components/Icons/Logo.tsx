@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './logo.svg';
+import logo from '../../assets/svgs/logo.svg';
 import clsx from "clsx";
 import { ILogoProps } from './props/ILogo.props';
 

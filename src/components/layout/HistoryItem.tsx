@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import React from "react";
-import { IHistoryItemProps } from "./IHistoryitem.props";
+import { IHistoryItemProps } from "./props/IHistoryitem.props";
 
 
 export default function HistoryItem({ text, search, toggleSearch }: IHistoryItemProps) {
