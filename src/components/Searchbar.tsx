@@ -7,14 +7,17 @@ interface Props {
 }
 export default function Searchbar({ className, onSubmit }: Props) {
   const [search, setSearch] = useState("");
+
+  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onSubmit(search);
+    setSearch("")
+  }
+
   return (
     <form
       className={className}
-      onSubmit={(e) => {
-        e.preventDefault();
-        onSubmit(search);
-        setSearch("")
-      }}
+      onSubmit={submitForm}
     >
       <label
         htmlFor="default-search"

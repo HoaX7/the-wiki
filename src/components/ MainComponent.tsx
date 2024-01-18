@@ -50,6 +50,11 @@ export default function MainComponent() {
         setResults(null)
         setToggleSideBar(false)
     }
+
+    const handleSetPage = (page: number) => {
+        setCurrentPage(page)
+        handleSearch(query, ((page - 1) * 10))
+    }
     return (
       <div className="App h-full">
         <div className="flex h-full">
@@ -57,9 +62,7 @@ export default function MainComponent() {
             history={searchHistory}
             search={query}
             toggleSearch={handleSearch}
-            reset={() => {
-                reset()
-            }}
+            reset={reset}
             setShowSearch={setShowSearch}
             showSearch={showSearch}
             toggleSideBar={toggleSideBar}
@@ -72,10 +75,7 @@ export default function MainComponent() {
               result={results?.query?.search || []}
               metadata={results?.query?.searchinfo || { totalhits: 0 }}
               searchQuery={query}
-              setPage={(page) => {
-                setCurrentPage(page)
-                handleSearch(query, ((page - 1) * 10))
-              }}
+              setPage={handleSetPage}
               currentPage={currentPage}
               toggleSideBar={() => {
                 setToggleSideBar(!toggleSideBar)

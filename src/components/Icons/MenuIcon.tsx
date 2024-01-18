@@ -1,23 +1,26 @@
 import React from 'react'
 
-export default function SearchIcon() {
+interface IProps {
+    toggle: () => void;
+}
+export default function MenuIcon({ toggle }: IProps) {
   return (
-    <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+        <button onClick={toggle} className="block md:hidden">
           <svg
-            className="w-4 h-4 text-gray-500 dark:text-gray-400"
+            className="w-5 h-5"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 20 20"
+            viewBox="0 0 17 14"
           >
             <path
               stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              d="M1 1h15M1 7h15M1 13h15"
             />
           </svg>
-        </div>
+        </button>
   )
 }
