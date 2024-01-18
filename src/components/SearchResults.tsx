@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Pagination from "./Paginate";
 import Searchbar from "./Searchbar";
 import { ISearchResultProps } from "./ISearchResults.props";
+import { WindowEvent } from "./Hooks/WindowEvent";
 
 export default function SearchResults({
   result,
@@ -15,8 +16,15 @@ export default function SearchResults({
   onSearch,
 }: ISearchResultProps) {
   const wikiUrl = "https://en.wikipedia.org/wiki?curid=";
+
+  const callback = useCallback(() => {
+    if (showSearch) setShowSearch(false);
+  }, []);
+
+  WindowEvent("mousedown", callback);
+
   return (
-    <div className="w-full overflow-auto">
+    <div className="w-full overflow-auto relative">
       {showSearch && (
         <div className="absolute rounded -translate-x-[50%] left-[50%] z-20 shadow-lg top-40 w-[300px] md:w-[400px]">
           <Searchbar

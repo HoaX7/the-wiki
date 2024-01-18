@@ -32,6 +32,7 @@ export default function Searchbar({ className, onSubmit }: Props) {
           onChange={(e) => {
             setSearch(e.target.value);
           }}
+          autoFocus
         />
       </div>
     </form>
